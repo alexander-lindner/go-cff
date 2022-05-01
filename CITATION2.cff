@@ -1,0 +1,6 @@
+authors:
+    - family-names: Doe
+      given-names: John
+    - address: 123 Main St
+      email: test@l.de
+version: sd
