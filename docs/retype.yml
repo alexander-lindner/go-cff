@@ -1,0 +1,19 @@
+input: .
+output: .retype
+branding:
+  title: go-cff
+  label: Docs
+links:
+- text: view project on GitHub
+  link: https://github.com/alexander-lindner/go-cff/
+  icon: mark-github
+footer:
+  copyright: "&copy; Copyright {{ year }}. All rights reserved."
+
+edit:
+  repo: "https://github.com/alexander-lindner/go-cff/edit/"
+  base: /docs/
+  branch: master
+
+#cname: cff.alindner.org
+url: alexander-lindner.github.io/go-cff/

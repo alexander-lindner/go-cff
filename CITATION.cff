@@ -1,0 +1,28 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: go-cff
+message: >-
+   If you use this software, please cite it using the
+   metadata from this file.
+type: software
+authors:
+  - orcid: 'https://orcid.org/0000-0002-1464-3491'
+    given-names: Alexander
+    family-names: Lindner
+identifiers:
+  - type: url
+    value: 'https://github.com/alexander-lindner/go-cff'
+    description: Github Repo
+repository-code: 'https://github.com/alexander-lindner/go-cff'
+url: 'https://github.com/alexander-lindner/go-cff'
+repository: 'https://github.com/alexander-lindner/go-cff'
+repository-artifact: 'https://github.com/alexander-lindner/go-cff'
+abstract: A go library for using cff files simply.
+keywords:
+  - go
+  - cff
+license: MPL-2.0
+version: 1.0.0
+date-released: '2022-04-30'
