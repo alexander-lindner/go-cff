@@ -1,4 +1,4 @@
-package main
+package cff
 
 import (
 	"gopkg.in/yaml.v3"

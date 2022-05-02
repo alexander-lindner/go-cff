@@ -1,4 +1,4 @@
-package main
+package cff
 
 type Entity struct {
 	Address   string  `yaml:"address,omitempty"`

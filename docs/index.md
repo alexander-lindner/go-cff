@@ -6,6 +6,10 @@ order: -10
 
 `go-cff` is a simple library for working with the [CFF](https://citation-file-format.github.io/) format.
 
+## Use it
+```shell
+go get github.com/alexander-lindner/go-cff
+```
 ## Examples
 
 ```go
