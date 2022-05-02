@@ -28,12 +28,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/go-cff/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/go-cff/resources/css/retype.css?v=2.2.704833040855" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/go-cff/resources/css/retype.css?v=2.2.704833503463" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/go-cff/resources/js/config.js?v=2.2.704833040855" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/go-cff/resources/js/config.js?v=2.2.704833503463" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/go-cff/resources/js/retype.js?v=2.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/go-cff/resources/js/lunr.js?v=2.2.704833040855" defer></script>
-    <script id="prism-js" type="text/javascript" src="/go-cff/resources/js/prism.js?v=2.2.704833040855" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/go-cff/resources/js/lunr.js?v=2.2.704833503463" defer></script>
+    <script id="prism-js" type="text/javascript" src="/go-cff/resources/js/prism.js?v=2.2.704833503463" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -196,48 +196,47 @@
 <pre class="language-go"><code v-pre class="language-go">package main
 
 import (
-	&quot;fmt&quot;
-	log &quot;github.com/sirupsen/logrus&quot;
-	&quot;github.com/alexander-lindner/go-cff&quot;
+        &quot;fmt&quot;
+        log &quot;github.com/sirupsen/logrus&quot;
+        &quot;github.com/alexander-lindner/go-cff&quot;
 )
 
 func main() {
-	file := &quot;./CITATION.cff&quot;
-	parser, _ := ParseFile(file)
-	
-	for _, item := range parser.Authors {
-		if item.IsPerson {
-			fmt.Println(item.Person.GivenNames)
-		} else {
-			fmt.Println(item.Entity.Address)
-			fmt.Println(item.Entity.Email)
-		}
-	}
+        file := &quot;./CITATION.cff&quot;
+        parser, _ := cff.ParseFile(file)
 
-	content := Cff{
-		Authors: []PersonEntity{
-			{
-				Person: Person{
-					GivenNames: &quot;John&quot;,
-					Family:     &quot;Doe&quot;,
-				},
-			},
-			{
-				Entity: Entity{
-					Address: &quot;123 Main St&quot;,
-					Email:   &quot;test@l.de&quot;,
-				},
-			},
-		},
-		Version: &quot;sd&quot;,
-	}
-	file = &quot;./CITATION2.cff&quot;
-	err := SaveFile(file, content)
-	if err != nil {
-		log.Fatal(err)
-	}
-}
-</code></pre>
+        for _, item := range parser.Authors {
+                if item.IsPerson {
+                        fmt.Println(item.Person.GivenNames)
+                } else {
+                        fmt.Println(item.Entity.Address)
+                        fmt.Println(item.Entity.Email)
+                }
+        }
+
+        content := cff.Cff{
+                Authors: []cff.PersonEntity{
+                        {
+                                Person: cff.Person{
+                                        GivenNames: &quot;John&quot;,
+                                        Family:     &quot;Doe&quot;,
+                                },
+                        },
+                        { 
+                                Entity: cff.Entity{
+                                        Address: &quot;123 Main St&quot;,
+                                        Email:   &quot;test@l.de&quot;,
+                                },
+                        },
+                },
+                Version: &quot;sd&quot;,
+        }
+        file = &quot;./CITATION2.cff&quot;
+        err := cff.SaveFile(file, content)
+        if err != nil {
+                log.Fatal(err)
+        }
+}</code></pre>
 </doc-codeblock></div>
 
                                 
