@@ -1,5 +1,10 @@
 package cff
 
+import "net/url"
+
+type URL struct {
+	*url.URL
+}
 type Entity struct {
 	Address   string  `yaml:"address,omitempty"`
 	Alias     string  `yaml:"alias,omitempty"`
@@ -15,7 +20,7 @@ type Entity struct {
 	PostCode  int     `yaml:"post-code,omitempty"`
 	Region    string  `yaml:"region,omitempty"`
 	Tel       string  `yaml:"tel,omitempty"`
-	Website   string  `yaml:"website,omitempty"`
+	Website   URL     `yaml:"website,omitempty"`
 }
 type Person struct {
 	Address      string `yaml:"address,omitempty"`
@@ -33,7 +38,7 @@ type Person struct {
 	PostCode     int    `yaml:"post-code,omitempty"`
 	Region       string `yaml:"region,omitempty"`
 	Tel          string `yaml:"tel,omitempty"`
-	Website      string `yaml:"website,omitempty"`
+	Website      URL    `yaml:"website,omitempty"`
 }
 
 type PersonEntity struct {
@@ -86,7 +91,7 @@ type References struct {
 	Keywords           string         `yaml:"keywords,omitempty"`
 	Languages          string         `yaml:"languages,omitempty"`
 	License            string         `yaml:"license,omitempty"`
-	LicenseUrl         string         `yaml:"license-url,omitempty"`
+	LicenseUrl         URL            `yaml:"license-url,omitempty"`
 	LocEnd             string         `yaml:"loc-end,omitempty"`
 	LocStart           string         `yaml:"loc-start,omitempty"`
 	Location           Entity         `yaml:"location,omitempty"`
@@ -101,9 +106,9 @@ type References struct {
 	Pmcid              string         `yaml:"pmcid,omitempty"`
 	Publisher          Entity         `yaml:"publisher,omitempty"`
 	Recipients         PersonEntity   `yaml:"recipients,omitempty"`
-	Repository         string         `yaml:"repository,omitempty"`
-	RepositoryArtifact string         `yaml:"repository-artifact,omitempty"`
-	RepositoryCode     string         `yaml:"repository-code,omitempty"`
+	Repository         URL            `yaml:"repository,omitempty"`
+	RepositoryArtifact URL            `yaml:"repository-artifact,omitempty"`
+	RepositoryCode     URL            `yaml:"repository-code,omitempty"`
 	Scope              string         `yaml:"scope,omitempty"`
 	Section            string         `yaml:"section,omitempty"`
 	Senders            PersonEntity   `yaml:"senders,omitempty"`
@@ -114,7 +119,7 @@ type References struct {
 	Title              string         `yaml:"title,omitempty"`
 	Translators        PersonEntity   `yaml:"translators,omitempty"`
 	ReferenceType      string         `yaml:"type,omitempty"`
-	Url                string         `yaml:"url,omitempty"`
+	Url                URL            `yaml:"url,omitempty"`
 	Version            string         `yaml:"version,omitempty"`
 	Volume             int            `yaml:"volume,omitempty"`
 	VolumeTitle        string         `yaml:"volume-title,omitempty"`
@@ -132,15 +137,15 @@ type Cff struct {
 	Identifiers        []Identifiers  `yaml:"identifiers,omitempty"`
 	Keywords           []string       `yaml:"keywords,omitempty"`
 	License            string         `yaml:"license,omitempty"`     //todo validator using custom type
-	LicenseUtl         string         `yaml:"license-url,omitempty"` //todo validator using custom type
+	LicenseUtl         URL            `yaml:"license-url,omitempty"` //todo validator using custom type
 	Message            string         `yaml:"message,omitempty"`
 	PreferredCitation  References     `yaml:"preferred-citation,omitempty"`
 	References         References     `yaml:"references,omitempty"`
-	Repository         string         `yaml:"repository,omitempty"`          //todo validator using custom type
-	RepositoryArtifact string         `yaml:"repository-artifact,omitempty"` //todo validator using custom type
-	RepositoryCode     string         `yaml:"repository-code,omitempty"`     //todo validator using custom type
+	Repository         URL            `yaml:"repository,omitempty"`          //todo validator using custom type
+	RepositoryArtifact URL            `yaml:"repository-artifact,omitempty"` //todo validator using custom type
+	RepositoryCode     URL            `yaml:"repository-code,omitempty"`     //todo validator using custom type
 	Title              string         `yaml:"title,omitempty"`
 	CffType            string         `yaml:"type,omitempty"` //todo validator using custom type
-	Url                string         `yaml:"url,omitempty"`  //todo validator using custom type
+	Url                URL            `yaml:"url,omitempty"`  //todo validator using custom type
 	Version            string         `yaml:"version,omitempty"`
 }
