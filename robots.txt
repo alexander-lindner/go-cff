@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alexander-lindner.github.io/go-cff/sitemap.xml.gz
