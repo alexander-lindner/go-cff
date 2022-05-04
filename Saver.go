@@ -13,3 +13,8 @@ func SaveFile(file string, content Cff) error {
 	err = os.WriteFile(file, parsedContent, 0644)
 	return err
 }
+
+func Save(content Cff) ([]byte, error) {
+	parsedContent, err := yaml.Marshal(content)
+	return parsedContent, err
+}

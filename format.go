@@ -145,7 +145,7 @@ type Cff struct {
 	LicenseUtl         URL            `yaml:"license-url,omitempty"` //todo validator using custom type
 	Message            string         `yaml:"message,omitempty"`
 	PreferredCitation  References     `yaml:"preferred-citation,omitempty"`
-	References         References     `yaml:"references,omitempty"`
+	References         []References   `yaml:"references,omitempty"`
 	Repository         URL            `yaml:"repository,omitempty"`          //todo validator using custom type
 	RepositoryArtifact URL            `yaml:"repository-artifact,omitempty"` //todo validator using custom type
 	RepositoryCode     URL            `yaml:"repository-code,omitempty"`     //todo validator using custom type
