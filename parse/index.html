@@ -28,12 +28,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/go-cff/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/go-cff/resources/css/retype.css?v=2.2.704973129530" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/go-cff/resources/css/retype.css?v=2.2.704994200303" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/go-cff/resources/js/config.js?v=2.2.704973129530" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/go-cff/resources/js/config.js?v=2.2.704994200303" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/go-cff/resources/js/retype.js?v=2.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/go-cff/resources/js/lunr.js?v=2.2.704973129530" defer></script>
-    <script id="prism-js" type="text/javascript" src="/go-cff/resources/js/prism.js?v=2.2.704973129530" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/go-cff/resources/js/lunr.js?v=2.2.704994200303" defer></script>
+    <script id="prism-js" type="text/javascript" src="/go-cff/resources/js/prism.js?v=2.2.704994200303" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -178,10 +178,10 @@
 </doc-anchor-target>
 <p><code v-pre>go-cff</code> provides two ways to parse the data:</p>
 <ul>
-<li><code v-pre>cff.Parse(content string)</code> for parsing a string</li>
-<li><code v-pre>cff.ParseFile(filename string)</code> for parsing a file</li>
+<li><a href="https://pkg.go.dev/github.com/alexander-lindner/go-cff#Parse"><code v-pre>cff.Parse(content string)</code></a> for parsing a string</li>
+<li><a href="https://pkg.go.dev/github.com/alexander-lindner/go-cff#ParseFile"><code v-pre>cff.ParseFile(filename string)</code></a> for parsing a file</li>
 </ul>
-<p>The returned value is a <a href="https://github.com/alexander-lindner/go-cff/blob/main/format.go"><code v-pre>cff.CFF</code></a> object.
+<p>The returned value is a <a href="https://pkg.go.dev/github.com/alexander-lindner/go-cff#Cff"><code v-pre>cff.CFF</code></a> object.
 This object contains all the data from the CFF file, not available fields are empty.</p>
 <doc-anchor-target id="example">
     <h2>
@@ -211,6 +211,47 @@ if err != nil {
 }
 for _, reference := range parsedCFF.References {
     fmt.Println(reference.Title)
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="the-personentity-type">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-personentity-type">#</doc-anchor-trigger>
+        <span>The <code v-pre>PersonEntity</code> type</span>
+    </h2>
+</doc-anchor-target>
+<p>The <strong>CFF</strong> file format allows in several places two types at the same time:</p>
+<ul>
+<li><a href="https://pkg.go.dev/github.com/alexander-lindner/go-cff#Person"><code v-pre>Person</code></a></li>
+<li><a href="https://pkg.go.dev/github.com/alexander-lindner/go-cff#Entity"><code v-pre>Entity</code></a></li>
+</ul>
+<p>Go doesn&#x27;t allow to have a variable with several types.
+Thus, we created a small proxy struct to handle this situation: <a href="https://pkg.go.dev/github.com/alexander-lindner/go-cff#PersonEntity"><code v-pre>PersonEntity</code></a>.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-go"><code v-pre class="language-go">type PersonEntity struct {
+	Person   Person
+	Entity   Entity
+	IsEntity bool
+	IsPerson bool
+}</code></pre>
+</doc-codeblock></div>
+<p>As you see, it has the two fields for the <code v-pre>Person</code> and the <code v-pre>Entity</code> type.
+Additionally, it also has two boolean fields to know if it is a <code v-pre>Person</code> or an <code v-pre>Entity</code>.
+The leftover field contains an empty struct of the corresponding type.</p>
+<doc-anchor-target id="example-1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-1">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-go"><code v-pre class="language-go">parser, _ := cff.ParseFile(&quot;./CITATION.cff&quot;)
+
+for _, item := range parser.Authors {
+    if item.IsPerson() {
+        fmt.Println(item.Person.GivenNames)
+    } else {
+        fmt.Println(item.Entity.Address)
+    }
 }</code></pre>
 </doc-codeblock></div>
 
