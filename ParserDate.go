@@ -5,9 +5,8 @@ import (
 	"time"
 )
 
-type CffDate time.Time
-
-func (t *CffDate) UnmarshalYAML(unmarshal func(interface{}) error) error {
+//UnmarshalYAML parses a cff date string into a time.Time
+func (t *Date) UnmarshalYAML(unmarshal func(interface{}) error) error {
 	var unparsedString string
 	if err := unmarshal(&unparsedString); err != nil {
 		return err
@@ -18,12 +17,16 @@ func (t *CffDate) UnmarshalYAML(unmarshal func(interface{}) error) error {
 		return fmt.Errorf("failed to parse '%s' to time.Time: %v", unparsedString, err)
 	}
 
-	*t = CffDate(parsedTime)
+	*t = Date(parsedTime)
 	return nil
 }
-func (t *CffDate) Time() time.Time {
+
+//Time returns the time.Time
+func (t *Date) Time() time.Time {
 	return time.Time(*t)
 }
-func (t *CffDate) TimeString() string {
+
+//TimeString returns the string representation of the date
+func (t *Date) TimeString() string {
 	return t.Time().Format("2006-01-02")
 }

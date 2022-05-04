@@ -4,12 +4,15 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
+//EmptyPerson represents an empty person
 var EmptyPerson Person
 
+//Get is used to retrieve a person and an entity
 func (t *PersonEntity) Get() (Person, Entity) {
 	return t.Person, t.Entity
 }
 
+//MarshalYAML is used to serialise a PersonEntity
 func (t PersonEntity) MarshalYAML() (interface{}, error) {
 	if t.IsPerson || (t.Person != EmptyPerson) {
 		return t.Person, nil
@@ -17,6 +20,8 @@ func (t PersonEntity) MarshalYAML() (interface{}, error) {
 		return t.Entity, nil
 	}
 }
+
+//UnmarshalYAML creates a PersonEntity from a cff Person or Entity
 func (t *PersonEntity) UnmarshalYAML(v *yaml.Node) error {
 	var person Person
 

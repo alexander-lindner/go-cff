@@ -4,7 +4,7 @@ icon: home
 order: -10
 ---
 
-`go-cff` is a simple library for working with the [CFF](https://citation-file-format.github.io/) format.
+`go-cff` is an easy-to-use library for working with the [Citation File Format (CFF)](https://citation-file-format.github.io/) format in GO.
 
 ## Use it
 ```shell
@@ -17,7 +17,6 @@ package main
 
 import (
         "fmt"
-        log "github.com/sirupsen/logrus"
         "github.com/alexander-lindner/go-cff"
 )
 
@@ -33,7 +32,7 @@ func main() {
                         fmt.Println(item.Entity.Email)
                 }
         }
-
+		// -------------------------
         content := cff.Cff{
                 Authors: []cff.PersonEntity{
                         {
@@ -52,9 +51,6 @@ func main() {
                 Version: "sd",
         }
         file = "./CITATION2.cff"
-        err := cff.SaveFile(file, content)
-        if err != nil {
-                log.Fatal(err)
-        }
+        _ := cff.SaveFile(file, content)
 }
 ```

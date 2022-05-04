@@ -4,21 +4,21 @@ icon: pencil
 order: -30
 ---
 
-`go-cff` provides two ways to decode a [`cff.CFF`](https://github.com/alexander-lindner/go-cff/blob/main/format.go) object:
-* `cff.Save(content Cff)` for getting a string back
-* `cff.SaveFile(file string, content Cff) ` for saving as a file
+`go-cff` provides two ways to serialize a [`cff.CFF`](https://pkg.go.dev/github.com/alexander-lindner/go-cff#Cff) object as the CFF format:
+* [`cff.Save(content Cff)`](https://pkg.go.dev/github.com/alexander-lindner/go-cff#Save) for getting a string back
+* [`cff.SaveFile(file string, content Cff)`](https://pkg.go.dev/github.com/alexander-lindner/go-cff#SaveFile) for saving as a file
 
- [`cff.CFF`](https://github.com/alexander-lindner/go-cff/blob/main/format.go) is a struct,
- so you can easly create a new object from that struct or extend a read in object.
-Empty fields are skipped.
+ [`cff.CFF`](https://pkg.go.dev/github.com/alexander-lindner/go-cff#Cff) is a struct,
+ so you can easly create a new object from that struct or extend an already read in object.
+Empty and not set fields are skipped during serialisation.
 ## Helper
 
 For providing a better experience, we use special data structures when parsing a file, for 
 example `url.URL`.
 However, when creating a field with such a data structure, it is often really messy.
 Hence, you can use the following helper functions as alegant shortcuts:
-* `cff.MakeUrl(string)`
-* `cff.MakeDoi(string)`
+* [`cff.MakeUrl(string)`](https://pkg.go.dev/github.com/alexander-lindner/go-cff#MakeUrl)
+* [`cff.MakeDoi(string)`](https://pkg.go.dev/github.com/alexander-lindner/go-cff#MakeDoi)
 
 ```go
 content := cff.Cff{
@@ -35,6 +35,31 @@ content2 := cff.Cff{
 }
 fmt.Println("Equal: ", reflect.DeepEqual(content, content2))
 ```
+
+## The `PersonEntity` type
+!!! 
+For an exmplenation see [Parse](parse.md#the-personentity-type). 
+!!!
+The construction of a `PersonEntity` is very simple, use it like this:
+```go
+cff.Cff{
+  Authors: []cff.PersonEntity{
+      {
+          Person: cff.Person{
+              GivenNames: "John",
+              Family:     "Doe",
+          },
+      },
+      {
+          Entity: cff.Entity{
+              Address: "123 Main St",
+              Email:   "test@l.de",
+          },
+      },
+  },
+}
+```
+Only the not empty fields are serialized, so setting `Person` and `Entity` at the same time is useless.
 ## Example
 
 ### Save as a string

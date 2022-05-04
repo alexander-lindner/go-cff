@@ -6,6 +6,7 @@ import (
 	"os"
 )
 
+// ParseFile parses a cff file to a cff.Cff struct
 func ParseFile(file string) (Cff, error) {
 	content, err := os.ReadFile(file)
 	if err != nil {
@@ -15,6 +16,7 @@ func ParseFile(file string) (Cff, error) {
 	return Parse(string(content))
 }
 
+// Parse parses a string in the cff format to a cff.Cff struct
 func Parse(content string) (Cff, error) {
 	var t Cff
 	err := yaml.Unmarshal([]byte(content), &t)

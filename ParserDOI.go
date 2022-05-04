@@ -4,7 +4,7 @@ import (
 	"errors"
 )
 
-//'\b(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?!["&\'<>])[[:graph:]])+)\b'
+//parseDoi creates a DOI object from a string
 func parseDoi(doi string) (general string, directoryIndicator string, registrantCode string, err error) {
 	state := 0
 
@@ -36,6 +36,8 @@ func parseDoi(doi string) (general string, directoryIndicator string, registrant
 	}
 	return
 }
+
+//UnmarshalYAML parses a cff doi string into a DOI object
 func (d *DOI) UnmarshalYAML(unmarshal func(interface{}) error) error {
 	var doi string
 	err := unmarshal(&doi)
@@ -54,6 +56,7 @@ func (d *DOI) UnmarshalYAML(unmarshal func(interface{}) error) error {
 	return err
 }
 
+//IsValid checks if a DOI is valid
 func (d DOI) IsValid() bool {
 	if d.General != "10" {
 		return false
@@ -63,12 +66,16 @@ func (d DOI) IsValid() bool {
 
 	return true
 }
+
+//MarshalYAML serializes a DOI object into a cff doi string
 func (d DOI) MarshalYAML() (interface{}, error) {
 	if d.IsValid() {
 		return d.General + "." + d.DirectoryIndicator + "/" + d.RegistrantCode, nil
 	}
 	return "", errors.New("DOI is invalid")
 }
+
+//MakeDoi creates a DOI object from a basic string
 func MakeDoi(doi string) DOI {
 	general, directoryIndicator, registrantCode, err := parseDoi(doi)
 	if err != nil {

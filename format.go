@@ -1,32 +1,47 @@
+//Package cff provides a parser for the CFF format.
+//Go to https://alexander-lindner.github.io/go-cff/ for a full documentation.
 package cff
 
-import "net/url"
+import (
+	"net/url"
+	"time"
+)
 
+//URL represents a basic url. See https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md#definitionsurl for more information.
 type URL struct {
 	*url.URL
 }
+
+//Date represents a date
+type Date time.Time
+
+//DOI represents a CFF DOI. See https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md#definitionsdoi for more information.
 type DOI struct {
 	General            string
 	DirectoryIndicator string
 	RegistrantCode     string
 }
+
+//Entity represents an CFF entity. See https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md#definitionsentity for more information.
 type Entity struct {
-	Address   string  `yaml:"address,omitempty"`
-	Alias     string  `yaml:"alias,omitempty"`
-	City      string  `yaml:"city,omitempty"`
-	Country   string  `yaml:"country,omitempty"`
-	DateEnd   CffDate `yaml:"date-end,omitempty"`
-	DateStart CffDate `yaml:"date-start,omitempty"`
-	Email     string  `yaml:"email,omitempty"`
-	Fax       string  `yaml:"fax,omitempty"`
-	Location  string  `yaml:"location,omitempty"`
-	Name      string  `yaml:"name,omitempty"`
-	Orcid     string  `yaml:"orcid,omitempty"`
-	PostCode  int     `yaml:"post-code,omitempty"`
-	Region    string  `yaml:"region,omitempty"`
-	Tel       string  `yaml:"tel,omitempty"`
-	Website   URL     `yaml:"website,omitempty"`
+	Address   string `yaml:"address,omitempty"`
+	Alias     string `yaml:"alias,omitempty"`
+	City      string `yaml:"city,omitempty"`
+	Country   string `yaml:"country,omitempty"`
+	DateEnd   Date   `yaml:"date-end,omitempty"`
+	DateStart Date   `yaml:"date-start,omitempty"`
+	Email     string `yaml:"email,omitempty"`
+	Fax       string `yaml:"fax,omitempty"`
+	Location  string `yaml:"location,omitempty"`
+	Name      string `yaml:"name,omitempty"`
+	Orcid     string `yaml:"orcid,omitempty"`
+	PostCode  int    `yaml:"post-code,omitempty"`
+	Region    string `yaml:"region,omitempty"`
+	Tel       string `yaml:"tel,omitempty"`
+	Website   URL    `yaml:"website,omitempty"`
 }
+
+//Person represents an CFF person. See https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md#definitionsperson for more information.
 type Person struct {
 	Address      string `yaml:"address,omitempty"`
 	Affiliation  string `yaml:"affiliation,omitempty"`
@@ -46,6 +61,8 @@ type Person struct {
 	Website      URL    `yaml:"website,omitempty"`
 }
 
+//PersonEntity a proxy struct which holds either a Person or an Entity.
+//Use the bool field to determine which one is set.
 type PersonEntity struct {
 	Person   Person
 	Entity   Entity
@@ -53,12 +70,15 @@ type PersonEntity struct {
 	IsPerson bool
 }
 
-type Identifiers struct {
+//Identifier represents an CFF identifier. See https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md#definitionsidentifier for more information.
+type Identifier struct {
 	IdentifiersType string `yaml:"type,omitempty"`
 	Value           string `yaml:"value,omitempty"`
 	Description     string `yaml:"description,omitempty"`
 }
-type References struct {
+
+//Reference represents an CFF references. See https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md#definitionsreference for more information.
+type Reference struct {
 	Abbreviation       string         `yaml:"abbreviation,omitempty"`
 	Abstract           string         `yaml:"abstract,omitempty"`
 	Authors            []PersonEntity `yaml:"authors,omitempty"`
@@ -72,10 +92,10 @@ type References struct {
 	DataType           string         `yaml:"data-type,omitempty"`
 	DatabaseProvider   Entity         `yaml:"database-provider,omitempty"`
 	Database           string         `yaml:"database,omitempty"`
-	DateAccessed       CffDate        `yaml:"date-accessed,omitempty"`
-	DateDownloaded     CffDate        `yaml:"date-downloaded,omitempty"`
-	DatePublished      CffDate        `yaml:"date-published,omitempty"`
-	DateReleased       CffDate        `yaml:"date-released,omitempty"`
+	DateAccessed       Date           `yaml:"date-accessed,omitempty"`
+	DateDownloaded     Date           `yaml:"date-downloaded,omitempty"`
+	DatePublished      Date           `yaml:"date-published,omitempty"`
+	DateReleased       Date           `yaml:"date-released,omitempty"`
 	Department         string         `yaml:"department,omitempty"`
 	Doi                DOI            `yaml:"doi,omitempty"`
 	Edition            string         `yaml:"edition,omitempty"`
@@ -85,7 +105,7 @@ type References struct {
 	Entry              string         `yaml:"entry,omitempty"`
 	Filename           string         `yaml:"filename,omitempty"`
 	Format             string         `yaml:"format,omitempty"`
-	Identifiers        []Identifiers  `yaml:"identifiers,omitempty"`
+	Identifiers        []Identifier   `yaml:"identifiers,omitempty"`
 	Institution        Entity         `yaml:"institution,omitempty"`
 	Isbn               string         `yaml:"isbn,omitempty"`
 	Issn               string         `yaml:"issn,omitempty"`
@@ -131,24 +151,26 @@ type References struct {
 	Year               int            `yaml:"year,omitempty"`
 	YearOriginal       int            `yaml:"year-original,omitempty"`
 }
+
+//Cff is the representation of a CFF file
 type Cff struct {
 	Abstract           string         `yaml:"abstract,omitempty"`
 	Authors            []PersonEntity `yaml:"authors,omitempty"`
 	CffVersion         string         `yaml:"cff-version,omitempty"`
 	Commit             string         `yaml:"commit,omitempty"`
 	Contact            []PersonEntity `yaml:"contact,omitempty"`
-	DateReleased       CffDate        `yaml:"date-released,omitempty"`
+	DateReleased       Date           `yaml:"date-released,omitempty"`
 	Doi                DOI            `yaml:"doi,omitempty"`
-	Identifiers        []Identifiers  `yaml:"identifiers,omitempty"`
+	Identifiers        []Identifier   `yaml:"identifiers,omitempty"`
 	Keywords           []string       `yaml:"keywords,omitempty"`
-	License            string         `yaml:"license,omitempty"`     //todo validator using custom type
-	LicenseUtl         URL            `yaml:"license-url,omitempty"` //todo validator using custom type
+	License            string         `yaml:"license,omitempty"` //todo validator using custom type
+	LicenseUtl         URL            `yaml:"license-url,omitempty"`
 	Message            string         `yaml:"message,omitempty"`
-	PreferredCitation  References     `yaml:"preferred-citation,omitempty"`
-	References         []References   `yaml:"references,omitempty"`
-	Repository         URL            `yaml:"repository,omitempty"`          //todo validator using custom type
-	RepositoryArtifact URL            `yaml:"repository-artifact,omitempty"` //todo validator using custom type
-	RepositoryCode     URL            `yaml:"repository-code,omitempty"`     //todo validator using custom type
+	PreferredCitation  Reference      `yaml:"preferred-citation,omitempty"`
+	References         []Reference    `yaml:"references,omitempty"`
+	Repository         URL            `yaml:"repository,omitempty"`
+	RepositoryArtifact URL            `yaml:"repository-artifact,omitempty"`
+	RepositoryCode     URL            `yaml:"repository-code,omitempty"`
 	Title              string         `yaml:"title,omitempty"`
 	CffType            string         `yaml:"type,omitempty"` //todo validator using custom type
 	Url                URL            `yaml:"url,omitempty"`
