@@ -5,6 +5,11 @@ import "net/url"
 type URL struct {
 	*url.URL
 }
+type DOI struct {
+	General            string
+	DirectoryIndicator string
+	RegistrantCode     string
+}
 type Entity struct {
 	Address   string  `yaml:"address,omitempty"`
 	Alias     string  `yaml:"alias,omitempty"`
@@ -57,7 +62,7 @@ type References struct {
 	Abbreviation       string         `yaml:"abbreviation,omitempty"`
 	Abstract           string         `yaml:"abstract,omitempty"`
 	Authors            []PersonEntity `yaml:"authors,omitempty"`
-	CollectionDoi      string         `yaml:"collection-doi,omitempty"`
+	CollectionDoi      DOI            `yaml:"collection-doi,omitempty"`
 	CollectionTitle    string         `yaml:"collection-title,omitempty"`
 	CollectionType     string         `yaml:"collection-type,omitempty"`
 	Commit             string         `yaml:"commit,omitempty"`
@@ -72,7 +77,7 @@ type References struct {
 	DatePublished      CffDate        `yaml:"date-published,omitempty"`
 	DateReleased       CffDate        `yaml:"date-released,omitempty"`
 	Department         string         `yaml:"department,omitempty"`
-	Doi                string         `yaml:"doi,omitempty"`
+	Doi                DOI            `yaml:"doi,omitempty"`
 	Edition            string         `yaml:"edition,omitempty"`
 	Editors            []PersonEntity `yaml:"editors,omitempty"`
 	EditorsSeries      []PersonEntity `yaml:"editors-series,omitempty"`
@@ -133,7 +138,7 @@ type Cff struct {
 	Commit             string         `yaml:"commit,omitempty"`
 	Contact            []PersonEntity `yaml:"contact,omitempty"`
 	DateReleased       CffDate        `yaml:"date-released,omitempty"`
-	Doi                string         `yaml:"doi,omitempty"` //todo validator using custom type
+	Doi                DOI            `yaml:"doi,omitempty"`
 	Identifiers        []Identifiers  `yaml:"identifiers,omitempty"`
 	Keywords           []string       `yaml:"keywords,omitempty"`
 	License            string         `yaml:"license,omitempty"`     //todo validator using custom type
@@ -146,6 +151,6 @@ type Cff struct {
 	RepositoryCode     URL            `yaml:"repository-code,omitempty"`     //todo validator using custom type
 	Title              string         `yaml:"title,omitempty"`
 	CffType            string         `yaml:"type,omitempty"` //todo validator using custom type
-	Url                URL            `yaml:"url,omitempty"`  //todo validator using custom type
+	Url                URL            `yaml:"url,omitempty"`
 	Version            string         `yaml:"version,omitempty"`
 }
