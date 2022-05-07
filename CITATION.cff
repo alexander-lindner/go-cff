@@ -11,6 +11,7 @@ authors:
   - orcid: 'https://orcid.org/0000-0002-1464-3491'
     given-names: Alexander
     family-names: Lindner
+    country: DE
 identifiers:
   - type: url
     value: 'https://github.com/alexander-lindner/go-cff'
@@ -26,3 +27,10 @@ keywords:
 license: MPL-2.0
 version: 1.0.0
 date-released: '2022-04-30'
+
+references:
+  - doi: '10.5281/zenodo.1234'
+    languages:
+      - en
+      - de
+    title: 'A test reference'

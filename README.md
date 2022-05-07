@@ -19,17 +19,17 @@ See [Documentation](https://alexander-lindner.github.io/go-cff/) for more inform
 
 ## ToDo's
 
-* definitions.country
-* definitions.email
-* definitions.fax
-* definitions.license-enum
-* definitions.orcid
-* definitions.reference.isbn
-* definitions.reference.issn
-* definitions.reference.languages
-* definitions.reference.pmcid
-* definitions.reference.status
-* definitions.reference.type
-* definitions.swh-identifier
-* definitions.url
-* definitions.version
+* ~~definitions.country~~
+* ~~definitions.email~~
+* ~~definitions.fax~~
+* ~~definitions.license-enum~~
+* ~~definitions.orcid~~
+* ~~definitions.reference.isbn~~
+* ~~definitions.reference.issn~~
+* ~~definitions.reference.languages~~
+* ~~definitions.reference.pmcid~~
+* ~~definitions.reference.status~~
+* ~~definitions.reference.type~~
+* ~~definitions.swh-identifier~~
+* ~~definitions.url~~
+* ~~definitions.version~~

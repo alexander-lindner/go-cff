@@ -51,6 +51,6 @@ func main() {
                 Version: "sd",
         }
         file = "./CITATION2.cff"
-        _ := cff.SaveFile(file, content)
+        cff.SaveFile(file, content)
 }
 ```
