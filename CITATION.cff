@@ -27,10 +27,3 @@ keywords:
 license: MPL-2.0
 version: 1.0.0
 date-released: '2022-04-30'
-
-references:
-  - doi: '10.5281/zenodo.1234'
-    languages:
-      - en
-      - de
-    title: 'A test reference'
