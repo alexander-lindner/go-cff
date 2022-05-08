@@ -274,7 +274,7 @@ const (
 type License string
 
 const (
-	LICENSE_0BSD                              License = " 0BSD"
+	LICENSE_0BSD                              License = "0BSD"
 	LICENSE_AAL                               License = "AAL"
 	LICENSE_Abstyles                          License = "Abstyles"
 	LICENSE_Adobe2006                         License = "Adobe-2006"
@@ -286,10 +286,12 @@ const (
 	LICENSE_AFL21                             License = "AFL-2.1"
 	LICENSE_AFL30                             License = "AFL-3.0"
 	LICENSE_Afmparse                          License = "Afmparse"
+	LICENSE_AGPL10                            License = "AGPL-1.0"
 	LICENSE_AGPL10only                        License = "AGPL-1.0-only"
 	LICENSE_AGPL10orlater                     License = "AGPL-1.0-or-later"
 	LICENSE_AGPL30only                        License = "AGPL-3.0-only"
 	LICENSE_AGPL30orlater                     License = "AGPL-3.0-or-later"
+	LICENSE_AGPL30                            License = "AGPL-3.0"
 	LICENSE_Aladdin                           License = "Aladdin"
 	LICENSE_AMDPLPA                           License = "AMDPLPA"
 	LICENSE_AML                               License = "AML"
@@ -322,6 +324,8 @@ const (
 	LICENSE_BSD2Clause                        License = "BSD-2-Clause"
 	LICENSE_BSD2ClausePatent                  License = "BSD-2-Clause-Patent"
 	LICENSE_BSD2ClauseViews                   License = "BSD-2-Clause-Views"
+	LICENSE_BSD2ClauseFreeBSD                 License = "BSD-2-Clause-FreeBSD"
+	LICENSE_BSD2ClauseNetBSD                  License = "BSD-2-Clause-NetBSD"
 	LICENSE_BSD3Clause                        License = "BSD-3-Clause"
 	LICENSE_BSD3ClauseAttribution             License = "BSD-3-Clause-Attribution"
 	LICENSE_BSD3ClauseClear                   License = "BSD-3-Clause-Clear"
@@ -339,6 +343,7 @@ const (
 	LICENSE_BSDSourceCode                     License = "BSD-Source-Code"
 	LICENSE_BSL10                             License = "BSL-1.0"
 	LICENSE_BUSL11                            License = "BUSL-1.1"
+	LICENSE_bzip2105                          License = "bzip2-1.0.5"
 	LICENSE_bzip2106                          License = "bzip2-1.0.6"
 	LICENSE_CUDA10                            License = "C-UDA-1.0"
 	LICENSE_CAL10                             License = "CAL-1.0"
@@ -438,6 +443,7 @@ const (
 	LICENSE_dvipdfm                           License = "dvipdfm"
 	LICENSE_ECL10                             License = "ECL-1.0"
 	LICENSE_ECL20                             License = "ECL-2.0"
+	LICENSE_eCos20                            License = "eCos-2.0"
 	LICENSE_EFL10                             License = "EFL-1.0"
 	LICENSE_EFL20                             License = "EFL-2.0"
 	LICENSE_eGenix                            License = "eGenix"
@@ -463,6 +469,7 @@ const (
 	LICENSE_FSFULLR                           License = "FSFULLR"
 	LICENSE_FTL                               License = "FTL"
 	LICENSE_GD                                License = "GD"
+	LICENSE_GFDL11                            License = "GFDL-1.1"
 	LICENSE_GFDL11invariantsonly              License = "GFDL-1.1-invariants-only"
 	LICENSE_GFDL11invariantsorlater           License = "GFDL-1.1-invariants-or-later"
 	LICENSE_GFDL11noinvariantsonly            License = "GFDL-1.1-no-invariants-only"
@@ -475,24 +482,39 @@ const (
 	LICENSE_GFDL12noinvariantsorlater         License = "GFDL-1.2-no-invariants-or-later"
 	LICENSE_GFDL12only                        License = "GFDL-1.2-only"
 	LICENSE_GFDL12orlater                     License = "GFDL-1.2-or-later"
+	LICENSE_GFDL12                            License = "GFDL-1.2"
 	LICENSE_GFDL13invariantsonly              License = "GFDL-1.3-invariants-only"
 	LICENSE_GFDL13invariantsorlater           License = "GFDL-1.3-invariants-or-later"
 	LICENSE_GFDL13noinvariantsonly            License = "GFDL-1.3-no-invariants-only"
 	LICENSE_GFDL13noinvariantsorlater         License = "GFDL-1.3-no-invariants-or-later"
 	LICENSE_GFDL13only                        License = "GFDL-1.3-only"
 	LICENSE_GFDL13orlater                     License = "GFDL-1.3-or-later"
+	LICENSE_GFDL13                            License = "GFDL-1.3"
 	LICENSE_Giftware                          License = "Giftware"
 	LICENSE_GL2PS                             License = "GL2PS"
 	LICENSE_Glide                             License = "Glide"
 	LICENSE_Glulxe                            License = "Glulxe"
 	LICENSE_GLWTPL                            License = "GLWTPL"
 	LICENSE_gnuplot                           License = "gnuplot"
+	LICENSE_GPL10                             License = "GPL-1.0"
 	LICENSE_GPL10only                         License = "GPL-1.0-only"
 	LICENSE_GPL10orlater                      License = "GPL-1.0-or-later"
+	LICENSE_GPL10PLUS                         License = "GPL-1.0+"
+	LICENSE_GPL20                             License = "GPL-2.0"
 	LICENSE_GPL20only                         License = "GPL-2.0-only"
 	LICENSE_GPL20orlater                      License = "GPL-2.0-or-later"
+	LICENSE_GPL20withautoconfexception        License = "GPL-2.0-with-autoconf-exception"
+	LICENSE_GPL20withbisonexception           License = "GPL-2.0-with-bison-exception"
+	LICENSE_GPL20withclasspathexception       License = "GPL-2.0-with-classpath-exception"
+	LICENSE_GPL20withfontexception            License = "GPL-2.0-with-font-exception"
+	LICENSE_GPL20withGCCexception             License = "GPL-2.0-with-GCC-exception"
+	LICENSE_GPL20PLUS                         License = "GPL-2.0+"
+	LICENSE_GPL30                             License = "GPL-3.0"
 	LICENSE_GPL30only                         License = "GPL-3.0-only"
 	LICENSE_GPL30orlater                      License = "GPL-3.0-or-later"
+	LICENSE_GPL30withautoconfexception        License = "GPL-3.0-with-autoconf-exception"
+	LICENSE_GPL30withGCCexception             License = "GPL-3.0-with-GCC-exception"
+	LICENSE_GPL30PLUS                         License = "GPL-3.0+"
 	LICENSE_gSOAP13b                          License = "gSOAP-1.3b"
 	LICENSE_HaskellReport                     License = "HaskellReport"
 	LICENSE_Hippocratic21                     License = "Hippocratic-2.1"
@@ -520,12 +542,18 @@ const (
 	LICENSE_LAL13                             License = "LAL-1.3"
 	LICENSE_Latex2e                           License = "Latex2e"
 	LICENSE_Leptonica                         License = "Leptonica"
+	LICENSE_LGPL20                            License = "LGPL-2.0"
+	LICENSE_LGPL20PLUS                        License = "LGPL-2.0+"
 	LICENSE_LGPL20only                        License = "LGPL-2.0-only"
 	LICENSE_LGPL20orlater                     License = "LGPL-2.0-or-later"
+	LICENSE_LGPL21                            License = "LGPL-2.1"
 	LICENSE_LGPL21only                        License = "LGPL-2.1-only"
+	LICENSE_LGPL21PLUS                        License = "LGPL-2.1+"
 	LICENSE_LGPL21orlater                     License = "LGPL-2.1-or-later"
+	LICENSE_LGPL30                            License = "LGPL-3.0"
 	LICENSE_LGPL30only                        License = "LGPL-3.0-only"
 	LICENSE_LGPL30orlater                     License = "LGPL-3.0-or-later"
+	LICENSE_LGPL30PLUS                        License = "LGPL-3.0+"
 	LICENSE_LGPLLR                            License = "LGPLLR"
 	LICENSE_Libpng                            License = "Libpng"
 	LICENSE_libpng20                          License = "libpng-2.0"
@@ -581,6 +609,7 @@ const (
 	LICENSE_NISTPDfallback                    License = "NIST-PD-fallback"
 	LICENSE_NLOD10                            License = "NLOD-1.0"
 	LICENSE_NLOD20                            License = "NLOD-2.0"
+	LICENSE_Nunit                             License = "Nunit"
 	LICENSE_NLPL                              License = "NLPL"
 	LICENSE_Nokia                             License = "Nokia"
 	LICENSE_NOSL                              License = "NOSL"
@@ -662,6 +691,7 @@ const (
 	LICENSE_Saxpath                           License = "Saxpath"
 	LICENSE_SCEA                              License = "SCEA"
 	LICENSE_SchemeReport                      License = "SchemeReport"
+	LICENSE_StandardMLNJ                      License = "StandardML-NJ"
 	LICENSE_Sendmail                          License = "Sendmail"
 	LICENSE_Sendmail823                       License = "Sendmail-8.23"
 	LICENSE_SGIB10                            License = "SGI-B-1.0"
@@ -710,6 +740,7 @@ const (
 	LICENSE_WTFPL                             License = "WTFPL"
 	LICENSE_X11                               License = "X11"
 	LICENSE_X11distributemodificationsvariant License = "X11-distribute-modifications-variant"
+	LICENSE_wxWindows                         License = "wx-Windows"
 	LICENSE_Xerox                             License = "Xerox"
 	LICENSE_XFree8611                         License = "XFree86-1.1"
 	LICENSE_xinetd                            License = "xinetd"
@@ -726,7 +757,13 @@ const (
 	LICENSE_zlibacknowledgement               License = "zlib-acknowledgement"
 	LICENSE_ZPL11                             License = "ZPL-1.1"
 	LICENSE_ZPL20                             License = "ZPL-2.0"
+	LICENSE_ZPL21                             License = "ZPL-2.1"
 )
+
+//LicenseContainer is used to store the licenses as an array
+type LicenseContainer struct {
+	Data []License
+}
 
 //Language represents a languages identifier
 type Language string
@@ -746,7 +783,7 @@ type PMCID string
 //SWHID represents a SWH ID
 type SWHID string
 
-//TYPE represents the type of the work
+//TYPE represents the type of the reference
 type TYPE string
 
 const (
@@ -799,7 +836,15 @@ const (
 	TYPE_website                TYPE = "website"
 )
 
-//Status represents the status of the work
+//CFFTYPE represents the type of the work
+type CFFTYPE string
+
+const (
+	CFFTYPE_Software CFFTYPE = "software"
+	CFFTYPE_Dataset  CFFTYPE = "dataset"
+)
+
+//STATUS represents the status of the work
 type STATUS string
 
 const (
@@ -809,6 +854,59 @@ const (
 	STATUS_inPress       STATUS = "in-press"
 	STATUS_preprint      STATUS = "preprint"
 	STATUS_submitted     STATUS = "submitted"
+)
+
+//ReferenceType represents the type of a reference
+type ReferenceType string
+
+const (
+	ReferenceType_art                    ReferenceType = "art"
+	ReferenceType_article                ReferenceType = "article"
+	ReferenceType_audiovisual            ReferenceType = "audiovisual"
+	ReferenceType_bill                   ReferenceType = "bill"
+	ReferenceType_blog                   ReferenceType = "blog"
+	ReferenceType_book                   ReferenceType = "book"
+	ReferenceType_catalogue              ReferenceType = "catalogue"
+	ReferenceType_conferencePaper        ReferenceType = "conference-paper"
+	ReferenceType_conference             ReferenceType = "conference"
+	ReferenceType_data                   ReferenceType = "data"
+	ReferenceType_database               ReferenceType = "database"
+	ReferenceType_dictionary             ReferenceType = "dictionary"
+	ReferenceType_editedWork             ReferenceType = "edited-work"
+	ReferenceType_encyclopedia           ReferenceType = "encyclopedia"
+	ReferenceType_filmBroadcast          ReferenceType = "film-broadcast"
+	ReferenceType_generic                ReferenceType = "generic"
+	ReferenceType_governmentDocument     ReferenceType = "government-document"
+	ReferenceType_grant                  ReferenceType = "grant"
+	ReferenceType_hearing                ReferenceType = "hearing"
+	ReferenceType_historicalWork         ReferenceType = "historical-work"
+	ReferenceType_legalCase              ReferenceType = "legal-case"
+	ReferenceType_legalRule              ReferenceType = "legal-rule"
+	ReferenceType_magazineArticle        ReferenceType = "magazine-article"
+	ReferenceType_manual                 ReferenceType = "manual"
+	ReferenceType_map                    ReferenceType = "map"
+	ReferenceType_multimedia             ReferenceType = "multimedia"
+	ReferenceType_music                  ReferenceType = "music"
+	ReferenceType_newspaperArticle       ReferenceType = "newspaper-article"
+	ReferenceType_pamphlet               ReferenceType = "pamphlet"
+	ReferenceType_patent                 ReferenceType = "patent"
+	ReferenceType_personalCommunication  ReferenceType = "personal-communication"
+	ReferenceType_proceedings            ReferenceType = "proceedings"
+	ReferenceType_report                 ReferenceType = "report"
+	ReferenceType_serial                 ReferenceType = "serial"
+	ReferenceType_slides                 ReferenceType = "slides"
+	ReferenceType_softwareCode           ReferenceType = "software-code"
+	ReferenceType_softwareContainer      ReferenceType = "software-container"
+	ReferenceType_softwareExecutable     ReferenceType = "software-executable"
+	ReferenceType_softwareVirtualMachine ReferenceType = "software-virtual-machine"
+	ReferenceType_software               ReferenceType = "software"
+	ReferenceType_soundRecording         ReferenceType = "sound-recording"
+	ReferenceType_standard               ReferenceType = "standard"
+	ReferenceType_statute                ReferenceType = "statute"
+	ReferenceType_thesis                 ReferenceType = "thesis"
+	ReferenceType_unpublished            ReferenceType = "unpublished"
+	ReferenceType_video                  ReferenceType = "video"
+	ReferenceType_website                ReferenceType = "website"
 )
 
 //DOI represents a CFF DOI. See https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md#definitionsdoi for more information.
@@ -831,7 +929,7 @@ type Entity struct {
 	Location  string  `yaml:"location,omitempty"`
 	Name      string  `yaml:"name,omitempty"`
 	Orcid     ORCID   `yaml:"orcid,omitempty"`
-	PostCode  int     `yaml:"post-code,omitempty"`
+	PostCode  string  `yaml:"post-code,omitempty"`
 	Region    string  `yaml:"region,omitempty"`
 	Tel       string  `yaml:"tel,omitempty"`
 	Website   URL     `yaml:"website,omitempty"`
@@ -851,7 +949,7 @@ type Person struct {
 	NameParticle string  `yaml:"name-particle,omitempty"`
 	NameSuffix   string  `yaml:"name-suffix,omitempty"`
 	Orcid        ORCID   `yaml:"orcid,omitempty"`
-	PostCode     int     `yaml:"post-code,omitempty"`
+	PostCode     string  `yaml:"post-code,omitempty"`
 	Region       string  `yaml:"region,omitempty"`
 	Tel          string  `yaml:"tel,omitempty"`
 	Website      URL     `yaml:"website,omitempty"`
@@ -865,112 +963,138 @@ type PersonEntity struct {
 	IsEntity bool
 	IsPerson bool
 }
-
-//todo
-
-//Identifier represents an CFF identifier. See https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md#definitionsidentifier for more information.
-type Identifier struct {
+type IdentifierTest struct {
+	IdentifiersType string `yaml:"type,omitempty"`
+}
+type IdentifierDOI struct {
+	IdentifiersType string `yaml:"type,omitempty"`
+	Value           DOI    `yaml:"value,omitempty"`
+	Description     string `yaml:"description,omitempty"`
+}
+type IdentifierURL struct {
+	IdentifiersType string `yaml:"type,omitempty"`
+	Value           URL    `yaml:"value,omitempty"`
+	Description     string `yaml:"description,omitempty"`
+}
+type IdentifierSWH struct {
+	IdentifiersType string `yaml:"type,omitempty"`
+	Value           SWHID  `yaml:"value,omitempty"`
+	Description     string `yaml:"description,omitempty"`
+}
+type IdentifierOther struct {
 	IdentifiersType string `yaml:"type,omitempty"`
 	Value           string `yaml:"value,omitempty"`
 	Description     string `yaml:"description,omitempty"`
 }
 
+//Identifier represents an CFF identifier. See https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md#definitionsidentifier for more information.
+type Identifier struct {
+	DOI     IdentifierDOI
+	URL     IdentifierURL
+	SWH     IdentifierSWH
+	Other   IdentifierOther
+	IsDOI   bool
+	IsURL   bool
+	IsSWH   bool
+	IsOther bool
+}
+
 //Reference represents an CFF references. See https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md#definitionsreference for more information.
 type Reference struct {
-	Abbreviation       string         `yaml:"abbreviation,omitempty"`
-	Abstract           string         `yaml:"abstract,omitempty"`
-	Authors            []PersonEntity `yaml:"authors,omitempty"`
-	CollectionDoi      DOI            `yaml:"collection-doi,omitempty"`
-	CollectionTitle    string         `yaml:"collection-title,omitempty"`
-	CollectionType     string         `yaml:"collection-type,omitempty"`
-	Commit             string         `yaml:"commit,omitempty"`
-	Conference         Entity         `yaml:"conference,omitempty"`
-	Contact            []PersonEntity `yaml:"contact,omitempty"`
-	Copyright          string         `yaml:"copyright,omitempty"`
-	DataType           string         `yaml:"data-type,omitempty"`
-	DatabaseProvider   Entity         `yaml:"database-provider,omitempty"`
-	Database           string         `yaml:"database,omitempty"`
-	DateAccessed       Date           `yaml:"date-accessed,omitempty"`
-	DateDownloaded     Date           `yaml:"date-downloaded,omitempty"`
-	DatePublished      Date           `yaml:"date-published,omitempty"`
-	DateReleased       Date           `yaml:"date-released,omitempty"`
-	Department         string         `yaml:"department,omitempty"`
-	Doi                DOI            `yaml:"doi,omitempty"`
-	Edition            string         `yaml:"edition,omitempty"`
-	Editors            []PersonEntity `yaml:"editors,omitempty"`
-	EditorsSeries      []PersonEntity `yaml:"editors-series,omitempty"`
-	End                string         `yaml:"end,omitempty"`
-	Entry              string         `yaml:"entry,omitempty"`
-	Filename           string         `yaml:"filename,omitempty"`
-	Format             string         `yaml:"format,omitempty"`
-	Identifiers        []Identifier   `yaml:"identifiers,omitempty"`
-	Institution        Entity         `yaml:"institution,omitempty"`
-	Isbn               ISBN           `yaml:"isbn,omitempty"`
-	Issn               ISSN           `yaml:"issn,omitempty"`
-	Issue              string         `yaml:"issue,omitempty"`
-	IssueDate          string         `yaml:"issue-date,omitempty"`
-	IssueTitle         string         `yaml:"issue-title,omitempty"`
-	Journal            string         `yaml:"journal,omitempty"`
-	Keywords           string         `yaml:"keywords,omitempty"`
-	Languages          []Language     `yaml:"languages,omitempty"`
-	License            License        `yaml:"license,omitempty"`
-	LicenseUrl         URL            `yaml:"license-url,omitempty"`
-	LocEnd             string         `yaml:"loc-end,omitempty"`
-	LocStart           string         `yaml:"loc-start,omitempty"`
-	Location           Entity         `yaml:"location,omitempty"`
-	Medium             string         `yaml:"medium,omitempty"`
-	Month              int            `yaml:"month,omitempty"`
-	Nihmsid            string         `yaml:"nihmsid,omitempty"`
-	Notes              string         `yaml:"notes,omitempty"`
-	Number             string         `yaml:"number,omitempty"`
-	NumberVolumes      string         `yaml:"number-volumes,omitempty"`
-	Pages              string         `yaml:"pages,omitempty"`
-	PatentStates       string         `yaml:"patent-states,omitempty"`
-	Pmcid              PMCID          `yaml:"pmcid,omitempty"`
-	Publisher          Entity         `yaml:"publisher,omitempty"`
-	Recipients         PersonEntity   `yaml:"recipients,omitempty"`
-	Repository         URL            `yaml:"repository,omitempty"`
-	RepositoryArtifact URL            `yaml:"repository-artifact,omitempty"`
-	RepositoryCode     URL            `yaml:"repository-code,omitempty"`
-	Scope              string         `yaml:"scope,omitempty"`
-	Section            string         `yaml:"section,omitempty"`
-	Senders            PersonEntity   `yaml:"senders,omitempty"`
-	Start              string         `yaml:"start,omitempty"`
-	Status             STATUS         `yaml:"status,omitempty"`
-	Term               string         `yaml:"term,omitempty"`
-	ThesisType         string         `yaml:"thesis-type,omitempty"`
-	Title              string         `yaml:"title,omitempty"`
-	Translators        PersonEntity   `yaml:"translators,omitempty"`
-	ReferenceType      string         `yaml:"type,omitempty"`
-	Url                URL            `yaml:"url,omitempty"`
-	Version            string         `yaml:"version,omitempty"`
-	Volume             int            `yaml:"volume,omitempty"`
-	VolumeTitle        string         `yaml:"volume-title,omitempty"`
-	Year               int            `yaml:"year,omitempty"`
-	YearOriginal       int            `yaml:"year-original,omitempty"`
+	Abbreviation       string           `yaml:"abbreviation,omitempty"`
+	Abstract           string           `yaml:"abstract,omitempty"`
+	Authors            []PersonEntity   `yaml:"authors,omitempty"`
+	CollectionDoi      DOI              `yaml:"collection-doi,omitempty"`
+	CollectionTitle    string           `yaml:"collection-title,omitempty"`
+	CollectionType     string           `yaml:"collection-type,omitempty"`
+	Commit             string           `yaml:"commit,omitempty"`
+	Conference         Entity           `yaml:"conference,omitempty"`
+	Contact            []PersonEntity   `yaml:"contact,omitempty"`
+	Copyright          string           `yaml:"copyright,omitempty"`
+	DataType           string           `yaml:"data-type,omitempty"`
+	DatabaseProvider   Entity           `yaml:"database-provider,omitempty"`
+	Database           string           `yaml:"database,omitempty"`
+	DateAccessed       Date             `yaml:"date-accessed,omitempty"`
+	DateDownloaded     Date             `yaml:"date-downloaded,omitempty"`
+	DatePublished      Date             `yaml:"date-published,omitempty"`
+	DateReleased       Date             `yaml:"date-released,omitempty"`
+	Department         string           `yaml:"department,omitempty"`
+	Doi                DOI              `yaml:"doi,omitempty"`
+	Edition            string           `yaml:"edition,omitempty"`
+	Editors            []PersonEntity   `yaml:"editors,omitempty"`
+	EditorsSeries      []PersonEntity   `yaml:"editors-series,omitempty"`
+	End                string           `yaml:"end,omitempty"`
+	Entry              string           `yaml:"entry,omitempty"`
+	Filename           string           `yaml:"filename,omitempty"`
+	Format             string           `yaml:"format,omitempty"`
+	Identifiers        []Identifier     `yaml:"identifiers,omitempty"`
+	Institution        Entity           `yaml:"institution,omitempty"`
+	Isbn               ISBN             `yaml:"isbn,omitempty"`
+	Issn               ISSN             `yaml:"issn,omitempty"`
+	Issue              string           `yaml:"issue,omitempty"`
+	IssueDate          string           `yaml:"issue-date,omitempty"`
+	IssueTitle         string           `yaml:"issue-title,omitempty"`
+	Journal            string           `yaml:"journal,omitempty"`
+	Keywords           []string         `yaml:"keywords,omitempty"`
+	Languages          []Language       `yaml:"languages,omitempty"`
+	License            LicenseContainer `yaml:"license,omitempty"`
+	LicenseUrl         URL              `yaml:"license-url,omitempty"`
+	LocEnd             string           `yaml:"loc-end,omitempty"`
+	LocStart           string           `yaml:"loc-start,omitempty"`
+	Location           Entity           `yaml:"location,omitempty"`
+	Medium             string           `yaml:"medium,omitempty"`
+	Month              int              `yaml:"month,omitempty"`
+	Nihmsid            string           `yaml:"nihmsid,omitempty"`
+	Notes              string           `yaml:"notes,omitempty"`
+	Number             string           `yaml:"number,omitempty"`
+	NumberVolumes      string           `yaml:"number-volumes,omitempty"`
+	Pages              string           `yaml:"pages,omitempty"`
+	PatentStates       []string         `yaml:"patent-states,omitempty"`
+	Pmcid              PMCID            `yaml:"pmcid,omitempty"`
+	Publisher          Entity           `yaml:"publisher,omitempty"`
+	Recipients         []PersonEntity   `yaml:"recipients,omitempty"`
+	Repository         URL              `yaml:"repository,omitempty"`
+	RepositoryArtifact URL              `yaml:"repository-artifact,omitempty"`
+	RepositoryCode     URL              `yaml:"repository-code,omitempty"`
+	Scope              string           `yaml:"scope,omitempty"`
+	Section            string           `yaml:"section,omitempty"`
+	Senders            []PersonEntity   `yaml:"senders,omitempty"`
+	Start              string           `yaml:"start,omitempty"`
+	Status             STATUS           `yaml:"status,omitempty"`
+	Term               string           `yaml:"term,omitempty"`
+	ThesisType         string           `yaml:"thesis-type,omitempty"`
+	Title              string           `yaml:"title,omitempty"`
+	Translators        []PersonEntity   `yaml:"translators,omitempty"`
+	ReferenceType      ReferenceType    `yaml:"type,omitempty"`
+	Url                URL              `yaml:"url,omitempty"`
+	Version            string           `yaml:"version,omitempty"`
+	Volume             int              `yaml:"volume,omitempty"`
+	VolumeTitle        string           `yaml:"volume-title,omitempty"`
+	Year               int              `yaml:"year,omitempty"`
+	YearOriginal       int              `yaml:"year-original,omitempty"`
 }
 
 //Cff is the representation of a CFF file
 type Cff struct {
-	Abstract           string         `yaml:"abstract,omitempty"`
-	Authors            []PersonEntity `yaml:"authors,omitempty"`
-	CffVersion         string         `yaml:"cff-version,omitempty"`
-	Commit             string         `yaml:"commit,omitempty"`
-	Contact            []PersonEntity `yaml:"contact,omitempty"`
-	DateReleased       Date           `yaml:"date-released,omitempty"`
-	Doi                DOI            `yaml:"doi,omitempty"`
-	Identifiers        []Identifier   `yaml:"identifiers,omitempty"`
-	Keywords           []string       `yaml:"keywords,omitempty"`
-	License            License        `yaml:"license,omitempty"`
-	LicenseUtl         URL            `yaml:"license-url,omitempty"`
-	Message            string         `yaml:"message,omitempty"`
-	PreferredCitation  Reference      `yaml:"preferred-citation,omitempty"`
-	References         []Reference    `yaml:"references,omitempty"`
-	Repository         URL            `yaml:"repository,omitempty"`
-	RepositoryArtifact URL            `yaml:"repository-artifact,omitempty"`
-	RepositoryCode     URL            `yaml:"repository-code,omitempty"`
-	Title              string         `yaml:"title,omitempty"`
-	CffType            string         `yaml:"type,omitempty"`
-	Url                URL            `yaml:"url,omitempty"`
-	Version            string         `yaml:"version,omitempty"`
+	Abstract           string           `yaml:"abstract,omitempty"`
+	Authors            []PersonEntity   `yaml:"authors,omitempty"`
+	CffVersion         string           `yaml:"cff-version,omitempty"`
+	Commit             string           `yaml:"commit,omitempty"`
+	Contact            []PersonEntity   `yaml:"contact,omitempty"`
+	DateReleased       Date             `yaml:"date-released,omitempty"`
+	Doi                DOI              `yaml:"doi,omitempty"`
+	Identifiers        []Identifier     `yaml:"identifiers,omitempty"`
+	Keywords           []string         `yaml:"keywords,omitempty"`
+	License            LicenseContainer `yaml:"license,omitempty"`
+	LicenseUtl         URL              `yaml:"license-url,omitempty"`
+	Message            string           `yaml:"message,omitempty"`
+	PreferredCitation  Reference        `yaml:"preferred-citation,omitempty"`
+	References         []Reference      `yaml:"references,omitempty"`
+	Repository         URL              `yaml:"repository,omitempty"`
+	RepositoryArtifact URL              `yaml:"repository-artifact,omitempty"`
+	RepositoryCode     URL              `yaml:"repository-code,omitempty"`
+	Title              string           `yaml:"title,omitempty"`
+	CffType            CFFTYPE          `yaml:"type,omitempty"`
+	Url                URL              `yaml:"url,omitempty"`
+	Version            string           `yaml:"version,omitempty"`
 }

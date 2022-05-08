@@ -50,7 +50,7 @@ func main() {
                 },
                 Version: "sd",
         }
-        file = "./CITATION2.cff"
+        file = "./TEST_CITATION_TEST.cff"
         cff.SaveFile(file, content)
 }
 ```

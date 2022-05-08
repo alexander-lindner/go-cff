@@ -15,4 +15,5 @@
 # vendor/
 
 /demo/
-/CITATION2.cff
+/TEST_CITATION_TEST.cff
+/TEST_CITATION_TEST2.cff

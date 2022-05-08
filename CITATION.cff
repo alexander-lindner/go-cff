@@ -12,19 +12,60 @@ authors:
     given-names: Alexander
     family-names: Lindner
     country: DE
+    aliases: alindner
 identifiers:
   - type: url
     value: 'https://github.com/alexander-lindner/go-cff'
     description: Github Repo
-repository-code: 'https://github.com/alexander-lindner/go-cff'
-url: 'https://github.com/alexander-lindner/go-cff'
+  - type: doi
+    value: 10.5281/zenodo.6526841
+    description: Version 0.3.0
+url: 'https://alexander-lindner.github.io/go-cff/'
 repository: 'https://github.com/alexander-lindner/go-cff'
-repository-artifact: 'https://github.com/alexander-lindner/go-cff'
-abstract: A go library for using cff files simply.
+repository-code: 'https://github.com/alexander-lindner/go-cff'
+repository-artifact: 'https://github.com/alexander-lindner/go-cff/releases'
+abstract: go-cff is an easy-to-use library for working with the Citation File Format (CFF) format in GO.
 keywords:
   - go
   - cff
+  - Citation File Format
 license: MPL-2.0
 version: 1.0.0
 date-released: '2022-04-30'
 doi: 10.5281/zenodo.6526841
+
+references:
+  - doi: 10.5281/zenodo.5171937
+    title: Citation File Format (CFF)
+    url: 'https://github.com/citation-file-format/citation-file-format/'
+    type: software
+    authors:
+      - family-names: Druskat
+        given-names: Stephan
+        orcid: https://orcid.org/0000-0003-4925-7248
+      - family-names: Spaaks
+        given-names: Jurriaan H.
+        orcid: https://orcid.org/0000-0002-7064-4069
+      - family-names: Chue Hong
+        given-names: Neil
+        orcid: https://orcid.org/0000-0002-8876-7606
+      - family-names: Haines
+        given-names: Robert
+        orcid: https://orcid.org/0000-0002-9538-7919
+      - family-names: Baker
+        given-names: James
+        orcid: https://orcid.org/0000-0002-2682-6922
+      - family-names: Bliven
+        given-names: Spencer
+        orcid: https://orcid.org/0000-0002-1200-1698
+        email: spencer.bliven@gmail.com
+      - family-names: Willighagen
+        given-names: Egon
+        orcid: https://orcid.org/0000-0001-7542-0286
+      - family-names: Pérez-Suárez
+        given-names: David
+        orcid: https://orcid.org/0000-0003-0784-6909
+        website: https://dpshelio.github.io
+      - family-names: Konovalov
+        given-names: Alexander
+        orcid: https://orcid.org/0000-0001-5299-3292

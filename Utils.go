@@ -5,6 +5,7 @@ import (
 	"regexp"
 )
 
+// CommonMarshalYAML marshal a string into a string and check if it matches the regex pattern
 func CommonMarshalYAML(cffString string, regexPattern *regexp.Regexp, typeOfString string) (interface{}, error) {
 	var err error
 	if regexPattern.MatchString(cffString) {
@@ -14,6 +15,7 @@ func CommonMarshalYAML(cffString string, regexPattern *regexp.Regexp, typeOfStri
 	}
 }
 
+// CommonUnmarshalYAML unmarshal a string into a string and check if it matches the regex pattern
 func CommonUnmarshalYAML(matchAction func(string), regexPattern *regexp.Regexp, unmarshal func(interface{}) error, typeOfString string) error {
 	var cffString string
 	err := unmarshal(&cffString)
