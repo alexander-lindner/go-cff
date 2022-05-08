@@ -8,7 +8,7 @@ import (
 //MarshalYAML is used to serialise a LicenseContainer
 func (t LicenseContainer) MarshalYAML() (interface{}, error) {
 	for _, license := range t.Data {
-		if !ReferenceTypeExists(string(license)) {
+		if !LicenseExists(string(license)) {
 			return nil, errors.New("invalid license: " + string(license))
 		}
 	}
