@@ -1,0 +1,131 @@
+authors:
+    - country: 'DE'
+      family-names: Doe
+      given-names: John
+      orcid: https://orcid.org/0000-0003-4925-7248-s
+    - address: 123 Main St
+      email: test@l.de
+      country: 'DE'
+doi: 10.1038/123456
+type: software
+identifiers:
+    - type: DOI
+      value: 10.1038/123456
+      description: test
+license:
+  - GPL-3.0-or-later
+references:
+  - abbreviation: NP
+    abstract: "This is a non-sensical example reference to show how the many different keys in a reference object can be used."
+    authors:
+      - name: "The Research Software Project"
+    collection-doi: 10.5281/zenodo.1003149
+    collection-title: "Proceedings of the Research Conference 2021"
+    collection-type: proceedings
+    commit: 16192bf05e99bcb35d5c3e085047807b5720fafc
+    conference:
+      name: "Research Conference 2021"
+    contact:
+      - name: "The RC21 Organizing Committee"
+    copyright: "© 2021 The Research Software Project team"
+    data-type: YAML
+    database: "Research Database"
+    database-provider:
+      name: "Research Databases Ltd."
+    date-accessed: "2021-07-27"
+    date-downloaded: "2021-07-27"
+    date-published: "2021-07-26"
+    date-released: "2021-07-26"
+    department: "Department of Hard Science Fiction"
+    doi: 10.5281/zenodo.4813122
+    edition: "2nd abridged edition"
+    editors:
+      - family-names: Inchief
+        given-names: Editor
+      - name: "The RCProc Editorial Team"
+    editors-series:
+      - family-names: Editor
+        given-names: Series
+      - name: "The Series Editors"
+    end: 42
+    entry: "Citation <n. 1>"
+    filename: CITATION.cff
+    format: "Citation File Format"
+    identifiers:
+      - description: "The concept DOI of the work."
+        type: doi
+        value: 10.5281/zenodo.1003149
+      - description: "The versioned DOI for version 1.1.0 of the work."
+        type: doi
+        value: 10.5281/zenodo.4813122
+      - description: "The Software Heritage identifier for version 1.1.0 of the work."
+        type: swh
+        value: "swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d"
+      - description: "The GitHub release URL of tag 1.1.0."
+        type: url
+        value: "https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0"
+    institution:
+      name: "University of Arcadia"
+    isbn: "9781603095075"
+    issn: 2475-9066
+    issue: 42
+    issue-date: "November/December 2021"
+    issue-title: "Special Issue: Software Citation"
+    journal: "Journal of Open Source Software"
+    keywords:
+      - "software citation"
+      - "citation file format"
+      - research
+    languages:
+      - en
+      - haw
+    license: Apache-2.0
+    license-url: "https://obscure-licenses.com?id=1234"
+    loc-end: 42
+    loc-start: 21
+    location:
+      name: "Library of the Unseen University"
+    medium: "5¼-inch floppy disk"
+    month: 7
+    nihmsid: NIHMS236863
+    notes: "Excellent reference! TODO Read for thesis."
+    number: 12053
+    number-volumes: 7
+    pages: 78
+    patent-states:
+      - Canada
+    pmcid: PMC3134971
+    publisher:
+      name: "Open Access Publishing House"
+    recipients:
+      - name: "Recipient entity of personal communication"
+      - family-names: Recipient
+        given-names: Communication
+    repository: "https://ascl.net/2105.013"
+    repository-artifact: "https://search.maven.org/artifact/org.corpus-tools/cff-maven-plugin/0.4.0/maven-plugin"
+    repository-code: "https://github.com/citation-file-format/my-research-software"
+    scope: "Supplement 2: Additional material"
+    section: 7
+    senders:
+      - name: "Sender entity of personal communication"
+      - family-names: Sender
+        given-names: Communication
+    start: 17
+    status: submitted
+    term: Citation
+    thesis-type: "PhD thesis"
+    title: "Towards better software citation"
+    translators:
+      - name: "Research Translators Ltd."
+      - family-names: Lator
+        given-names: Trans
+    type: conference-paper
+    url: "https://citation-file-format.github.io/"
+    version: 0.3.12
+    volume: 2
+    volume-title: "Volume II: How it went on"
+    year: 2021
+    year-original: 1978
+url: http://www.google.com
+cff-version: 1.2.0
+date-released: '2022-04-30'

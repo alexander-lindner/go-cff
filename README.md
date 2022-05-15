@@ -1,4 +1,8 @@
-# go-cff
+# go-cff 
+
+[![DOI](https://zenodo.org/badge/487247273.svg)](https://zenodo.org/badge/latestdoi/487247273)
+
+
 `go-cff` is an easy-to-use library for working with the [Citation File Format (CFF)](https://citation-file-format.github.io/) format in GO.
 
 
@@ -19,7 +23,6 @@ See [Documentation](https://alexander-lindner.github.io/go-cff/) for more inform
 
 ## ToDo's
 
-* Tests
 * Update documentation
 * Directory structure
 

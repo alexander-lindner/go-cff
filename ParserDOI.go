@@ -75,15 +75,21 @@ func (d DOI) MarshalYAML() (interface{}, error) {
 	return "", errors.New("DOI is invalid")
 }
 
-//MakeDoi creates a DOI object from a basic string
+//MakeDoi creates a DOI object from a basic string without error handling
 func MakeDoi(doi string) DOI {
+	doiObj, _ := ParseDoi(doi)
+	return doiObj
+}
+
+//ParseDoi creates a DOI object from a basic string with error handling
+func ParseDoi(doi string) (DOI, error) {
 	general, directoryIndicator, registrantCode, err := parseDoi(doi)
 	if err != nil {
-		return DOI{}
+		return DOI{}, err
 	}
 	return DOI{
 		General:            general,
 		DirectoryIndicator: directoryIndicator,
 		RegistrantCode:     registrantCode,
-	}
+	}, nil
 }

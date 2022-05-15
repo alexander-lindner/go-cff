@@ -18,12 +18,13 @@ func (t *STATUS) UnmarshalYAML(v *yaml.Node) error {
 	if !STATUSExists(v.Value) {
 		return errors.New("STATUS does not exist")
 	}
+	*t = STATUS(v.Value)
 	return nil
 }
 
 //STATUSExists checks if a STATUS exists
-func STATUSExists(country string) bool {
-	switch STATUS(country) {
+func STATUSExists(status string) bool {
+	switch STATUS(status) {
 	case STATUS_abstract:
 		return true
 	case STATUS_advanceOnline:

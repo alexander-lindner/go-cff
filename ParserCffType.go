@@ -18,12 +18,13 @@ func (t *CFFTYPE) UnmarshalYAML(v *yaml.Node) error {
 	if !CFFTYPEExists(v.Value) {
 		return errors.New("CFFTYPE does not exist")
 	}
+	*t = CFFTYPE(v.Value)
 	return nil
 }
 
 //CFFTYPEExists checks if a CFFTYPE exists
-func CFFTYPEExists(country string) bool {
-	switch CFFTYPE(country) {
+func CFFTYPEExists(cffType string) bool {
+	switch CFFTYPE(cffType) {
 	case CFFTYPE_Software:
 		return true
 	case CFFTYPE_Dataset:

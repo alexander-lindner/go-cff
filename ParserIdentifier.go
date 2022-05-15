@@ -15,6 +15,9 @@ var EmptyURL IdentifierURL
 //EmptyDOI represents an empty Identifier of type DOI
 var EmptyDOI IdentifierDOI
 
+//EmptyOther represents an empty Identifier of type Other
+var EmptyOther IdentifierOther
+
 //Get is used to retrieve a DOI Identifier or a URL Identifier or a SWH Identifier or an Other Identifier
 func (t *Identifier) Get() (IdentifierDOI, IdentifierURL, IdentifierSWH, IdentifierOther) {
 	return t.DOI, t.URL, t.SWH, t.Other
@@ -22,14 +25,31 @@ func (t *Identifier) Get() (IdentifierDOI, IdentifierURL, IdentifierSWH, Identif
 
 //MarshalYAML is used to serialise a PersonEntity
 func (t Identifier) MarshalYAML() (interface{}, error) {
+	trueArray := []bool{
+		t.DOI != EmptyDOI,
+		t.URL != EmptyURL,
+		t.SWH != EmptySWH,
+		t.Other != EmptyOther,
+	}
+	counter := 0
+	for _, element := range trueArray {
+		if element {
+			counter++
+		}
+	}
+	if counter == 0 {
+		return nil, errors.New("identifier is empty")
+	} else if counter > 1 {
+		return nil, errors.New("identifier contains more than one type")
+	}
 	if t.IsSWH || (t.SWH != EmptySWH) {
-		t.SWH.IdentifiersType = "SWH"
+		t.SWH.IdentifiersType = "swh"
 		return t.SWH, nil
 	} else if t.IsDOI || (t.DOI != EmptyDOI) {
-		t.DOI.IdentifiersType = "DOI"
+		t.DOI.IdentifiersType = "doi"
 		return t.DOI, nil
 	} else if t.IsURL || (t.URL != EmptyURL) {
-		t.URL.IdentifiersType = "URL"
+		t.URL.IdentifiersType = "url"
 		return t.URL, nil
 	} else {
 		return t.Other, nil

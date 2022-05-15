@@ -24,5 +24,7 @@ func (j *ORCID) UnmarshalYAML(unmarshal func(interface{}) error) error {
 
 //MarshalYAML serializes an ORCID object into a cff string
 func (j ORCID) MarshalYAML() (interface{}, error) {
-	return CommonMarshalYAML(string(j), regexORCID, "ORCID")
+	parsedItem, err := CommonMarshalYAML(string(j), regexORCID, "ORCID")
+	j = ORCID(parsedItem.(string))
+	return parsedItem, err
 }

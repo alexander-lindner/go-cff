@@ -16,8 +16,9 @@ func (t Country) MarshalYAML() (interface{}, error) {
 //UnmarshalYAML checks if the data is a valid Country
 func (t *Country) UnmarshalYAML(v *yaml.Node) error {
 	if !CountryExists(v.Value) {
-		return errors.New("Country does not exist")
+		return errors.New("country does not exist")
 	}
+	*t = Country(v.Value)
 	return nil
 }
 

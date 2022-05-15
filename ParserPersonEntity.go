@@ -1,11 +1,15 @@
 package cff
 
 import (
+	"errors"
 	"gopkg.in/yaml.v3"
 )
 
-//EmptyPerson represents an empty person
+//EmptyPerson represents an empty Person
 var EmptyPerson Person
+
+//EmptyEntity represents an empty Entity
+var EmptyEntity Entity
 
 //Get is used to retrieve a person and an entity
 func (t *PersonEntity) Get() (Person, Entity) {
@@ -14,10 +18,14 @@ func (t *PersonEntity) Get() (Person, Entity) {
 
 //MarshalYAML is used to serialise a PersonEntity
 func (t PersonEntity) MarshalYAML() (interface{}, error) {
-	if t.IsPerson || (t.Person != EmptyPerson) {
+	t.IsPerson = t.Person != EmptyPerson
+	t.IsEntity = t.Entity != EmptyEntity
+	if (t.IsPerson) && (!t.IsEntity) {
 		return t.Person, nil
-	} else {
+	} else if (t.IsEntity) && (!t.IsPerson) {
 		return t.Entity, nil
+	} else {
+		return nil, errors.New("identifier is empty or both person and entity were set")
 	}
 }
 

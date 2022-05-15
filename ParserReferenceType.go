@@ -18,12 +18,13 @@ func (t *ReferenceType) UnmarshalYAML(v *yaml.Node) error {
 	if !ReferenceTypeExists(v.Value) {
 		return errors.New("ReferenceType does not exist")
 	}
+	*t = ReferenceType(v.Value)
 	return nil
 }
 
 //ReferenceTypeExists checks if a ReferenceType exists
-func ReferenceTypeExists(country string) bool {
-	switch ReferenceType(country) {
+func ReferenceTypeExists(referenceType string) bool {
+	switch ReferenceType(referenceType) {
 	case ReferenceType_art:
 		return true
 	case ReferenceType_article:

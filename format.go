@@ -783,59 +783,6 @@ type PMCID string
 //SWHID represents a SWH ID
 type SWHID string
 
-//TYPE represents the type of the reference
-type TYPE string
-
-const (
-	TYPE_art                    TYPE = "art"
-	TYPE_article                TYPE = "article"
-	TYPE_audiovisual            TYPE = "audiovisual"
-	TYPE_bill                   TYPE = "bill"
-	TYPE_blog                   TYPE = "blog"
-	TYPE_book                   TYPE = "book"
-	TYPE_catalogue              TYPE = "catalogue"
-	TYPE_conferencePaper        TYPE = "conference-paper"
-	TYPE_conference             TYPE = "conference"
-	TYPE_data                   TYPE = "data"
-	TYPE_database               TYPE = "database"
-	TYPE_dictionary             TYPE = "dictionary"
-	TYPE_editedWork             TYPE = "edited-work"
-	TYPE_encyclopedia           TYPE = "encyclopedia"
-	TYPE_filmBroadcast          TYPE = "film-broadcast"
-	TYPE_generic                TYPE = "generic"
-	TYPE_governmentDocument     TYPE = "government-document"
-	TYPE_grant                  TYPE = "grant"
-	TYPE_hearing                TYPE = "hearing"
-	TYPE_historicalWork         TYPE = "historical-work"
-	TYPE_legalCase              TYPE = "legal-case"
-	TYPE_legalRule              TYPE = "legal-rule"
-	TYPE_magazineArticle        TYPE = "magazine-article"
-	TYPE_manual                 TYPE = "manual"
-	TYPE_map                    TYPE = "map"
-	TYPE_multimedia             TYPE = "multimedia"
-	TYPE_music                  TYPE = "music"
-	TYPE_newspaperArticle       TYPE = "newspaper-article"
-	TYPE_pamphlet               TYPE = "pamphlet"
-	TYPE_patent                 TYPE = "patent"
-	TYPE_personalCommunication  TYPE = "personal-communication"
-	TYPE_proceedings            TYPE = "proceedings"
-	TYPE_report                 TYPE = "report"
-	TYPE_serial                 TYPE = "serial"
-	TYPE_slides                 TYPE = "slides"
-	TYPE_softwareCode           TYPE = "software-code"
-	TYPE_softwareContainer      TYPE = "software-container"
-	TYPE_softwareExecutable     TYPE = "software-executable"
-	TYPE_softwareVirtualMachine TYPE = "software-virtual-machine"
-	TYPE_software               TYPE = "software"
-	TYPE_soundRecording         TYPE = "sound-recording"
-	TYPE_standard               TYPE = "standard"
-	TYPE_statute                TYPE = "statute"
-	TYPE_thesis                 TYPE = "thesis"
-	TYPE_unpublished            TYPE = "unpublished"
-	TYPE_video                  TYPE = "video"
-	TYPE_website                TYPE = "website"
-)
-
 //CFFTYPE represents the type of the work
 type CFFTYPE string
 
