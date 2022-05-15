@@ -12,7 +12,7 @@ authors:
     given-names: Alexander
     family-names: Lindner
     country: DE
-    aliases: alindner
+    alias: alindner
 identifiers:
   - type: url
     value: 'https://github.com/alexander-lindner/go-cff'
