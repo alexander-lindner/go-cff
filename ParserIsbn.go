@@ -25,6 +25,5 @@ func (j *ISBN) UnmarshalYAML(unmarshal func(interface{}) error) error {
 //MarshalYAML serializes an ISBN object into a cff string
 func (j ISBN) MarshalYAML() (interface{}, error) {
 	parsedItem, err := CommonMarshalYAML(string(j), regexISBN, "ISBN")
-	j = ISBN(parsedItem.(string))
 	return parsedItem, err
 }

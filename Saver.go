@@ -9,6 +9,9 @@ import (
 //SaveFile saves the cff object to the given path in the cff format
 func SaveFile(file string, content Cff) error {
 	parsedContent, err := Save(content)
+	if err != nil {
+		return err
+	}
 	err = os.WriteFile(file, parsedContent, 0644)
 	return err
 }
