@@ -26,6 +26,9 @@ identifiers:
   - type: doi
     value: 10.5281/zenodo.6551082
     description: Version 0.5.0
+  - type: doi
+    value: 10.5281/zenodo.6600669
+    description: Version 0.5.1
 url: 'https://alexander-lindner.github.io/go-cff/'
 repository: 'https://github.com/alexander-lindner/go-cff'
 repository-code: 'https://github.com/alexander-lindner/go-cff'
@@ -38,7 +41,7 @@ keywords:
 license: MPL-2.0
 version: 0.5.0
 date-released: '2022-05-15'
-doi: 10.5281/zenodo.6551082
+doi: 10.5281/zenodo.6600669
 
 references:
   - doi: 10.5281/zenodo.5171937

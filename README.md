@@ -30,5 +30,5 @@ See [Documentation](https://alexander-lindner.github.io/go-cff/) for more inform
 ## ToDo's
 
 * Update documentation
-* Directory structure
+* 100% coverage
 
