@@ -28,12 +28,13 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/go-cff/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/go-cff/resources/css/retype.css?v=2.2.705309131142" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/go-cff/fav2.svg" rel="icon" />
+    <link href="/go-cff/resources/css/retype.css?v=2.2.707345379976" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/go-cff/resources/js/config.js?v=2.2.705309131142" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/go-cff/resources/js/config.js?v=2.2.707345379976" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/go-cff/resources/js/retype.js?v=2.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/go-cff/resources/js/lunr.js?v=2.2.705309131142" defer></script>
-    <script id="prism-js" type="text/javascript" src="/go-cff/resources/js/prism.js?v=2.2.705309131142" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/go-cff/resources/js/lunr.js?v=2.2.707345379976" defer></script>
+    <script id="prism-js" type="text/javascript" src="/go-cff/resources/js/prism.js?v=2.2.707345379976" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -50,7 +51,7 @@
                     <div class="flex items-center px-2 md:px-6">
                         <a id="docs-site-logo" href="/go-cff/" class="flex items-center leading-snug text-2xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">go-cff</span>
-                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
+                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">0.5.1</span>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -182,7 +183,8 @@
 <li><a href="https://pkg.go.dev/github.com/alexander-lindner/go-cff#ParseFile"><code v-pre>cff.ParseFile(filename string)</code></a> for parsing a file</li>
 </ul>
 <p>The returned value is a <a href="https://pkg.go.dev/github.com/alexander-lindner/go-cff#Cff"><code v-pre>cff.CFF</code></a> object.
-This object contains all the data from the CFF file, not available fields are empty.</p>
+This object contains all the data from the CFF file, not available fields are empty.
+It is recommended to refer to that documentation for the available fields and their children or to use an intelligent IDE.</p>
 <doc-anchor-target id="example">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#example">#</doc-anchor-trigger>
@@ -247,10 +249,44 @@ The leftover field contains an empty struct of the corresponding type.</p>
 <pre class="language-go"><code v-pre class="language-go">parser, _ := cff.ParseFile(&quot;./CITATION.cff&quot;)
 
 for _, item := range parser.Authors {
-    if item.IsPerson() {
+    if item.IsPerson {
         fmt.Println(item.Person.GivenNames)
     } else {
         fmt.Println(item.Entity.Address)
+    }
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="the-identifier-type">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-identifier-type">#</doc-anchor-trigger>
+        <span>The <code v-pre>Identifier</code> type</span>
+    </h2>
+</doc-anchor-target>
+<p>Equal to the <doc-anchor-trigger to="#the-personentity-type"><code v-pre>PersonEntity</code></doc-anchor-trigger> type, the <code v-pre>Identifier</code> type is a proxy struct.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-go"><code v-pre class="language-go">type Identifier struct {
+	DOI     IdentifierDOI
+	URL     IdentifierURL
+	SWH     IdentifierSWH
+	Other   IdentifierOther
+	IsDOI   bool
+	IsURL   bool
+	IsSWH   bool
+	IsOther bool
+}</code></pre>
+</doc-codeblock></div>
+<p>Therefore, use the <code v-pre>IsDOI</code>, <code v-pre>IsURL</code>, <code v-pre>IsSWH</code> and <code v-pre>IsOther</code> fields to know if the identifier is from type DOI, URL, SWH or Other.</p>
+<doc-anchor-target id="example-2">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-2">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-go"><code v-pre class="language-go">document, _ := cff.ParseFile(&quot;./CITATION.cff&quot;)
+for _, item := range parser.Identifiers {
+    if item.IsURL {
+        fmt.Println(item.URL.Value)
     }
 }</code></pre>
 </doc-codeblock></div>
