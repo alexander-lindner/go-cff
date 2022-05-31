@@ -1,6 +1,6 @@
 # go-cff 
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6551082.svg)](https://doi.org/10.5281/zenodo.6551082)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6551082.svg)](https://doi.org/10.5281/zenodo.6600669)
 [![Audit](https://github.com/alexander-lindner/go-cff/actions/workflows/tests.yml/badge.svg)](https://github.com/alexander-lindner/go-cff/actions/workflows/tests.yml)
 [![Coverage Status](https://coveralls.io/repos/github/alexander-lindner/go-cff/badge.svg?branch=main)](https://coveralls.io/github/alexander-lindner/go-cff?branch=main)
 [![Go Report Card](https://goreportcard.com/badge/github.com/alexander-lindner/go-cff)](https://goreportcard.com/report/github.com/alexander-lindner/go-cff)
