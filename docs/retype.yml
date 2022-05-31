@@ -2,7 +2,7 @@ input: .
 output: .retype
 branding:
   title: go-cff
-  label: Docs
+  label: 0.5.1
 links:
 - text: view project on GitHub
   link: https://github.com/alexander-lindner/go-cff/
@@ -10,6 +10,7 @@ links:
 footer:
   copyright: "&copy; Copyright {{ year }}. All rights reserved."
 
+favicon: fav2.svg
 edit:
   repo: "https://github.com/alexander-lindner/go-cff/edit/"
   base: /docs/

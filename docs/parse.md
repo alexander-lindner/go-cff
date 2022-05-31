@@ -10,6 +10,7 @@ order: -20
 
 The returned value is a [`cff.CFF`](https://pkg.go.dev/github.com/alexander-lindner/go-cff#Cff) object.
 This object contains all the data from the CFF file, not available fields are empty.
+It is recommended to refer to that documentation for the available fields and their children or to use an intelligent IDE.
 
 ## Example
 
@@ -60,10 +61,35 @@ The leftover field contains an empty struct of the corresponding type.
 parser, _ := cff.ParseFile("./CITATION.cff")
 
 for _, item := range parser.Authors {
-    if item.IsPerson() {
+    if item.IsPerson {
         fmt.Println(item.Person.GivenNames)
     } else {
         fmt.Println(item.Entity.Address)
+    }
+}
+```
+
+## The `Identifier` type
+Equal to the [`PersonEntity`](#the-personentity-type) type, the `Identifier` type is a proxy struct.
+```go
+type Identifier struct {
+	DOI     IdentifierDOI
+	URL     IdentifierURL
+	SWH     IdentifierSWH
+	Other   IdentifierOther
+	IsDOI   bool
+	IsURL   bool
+	IsSWH   bool
+	IsOther bool
+}
+```
+Therefore, use the `IsDOI`, `IsURL`, `IsSWH` and `IsOther` fields to know if the identifier is from type DOI, URL, SWH or Other.
+### Example
+```go
+document, _ := cff.ParseFile("./CITATION.cff")
+for _, item := range parser.Identifiers {
+    if item.IsURL {
+        fmt.Println(item.URL.Value)
     }
 }
 ```

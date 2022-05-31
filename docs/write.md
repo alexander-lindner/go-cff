@@ -19,7 +19,8 @@ However, when creating a field with such a data structure, it is often really me
 Hence, you can use the following helper functions as alegant shortcuts:
 * [`cff.MakeUrl(string)`](https://pkg.go.dev/github.com/alexander-lindner/go-cff#MakeUrl)
 * [`cff.MakeDoi(string)`](https://pkg.go.dev/github.com/alexander-lindner/go-cff#MakeDoi)
-
+* [`cff.MakeLicensesByString(...string)`](https://pkg.go.dev/github.com/alexander-lindner/go-cff#MakeLicensesByString)
+* [`cff.MakeLicenses(...License)`](https://pkg.go.dev/github.com/alexander-lindner/go-cff#MakeLicenses)
 ```go
 content := cff.Cff{
     Version: "1.0",
