@@ -588,8 +588,8 @@ func TestLanguage(t *testing.T) {
 	validTestCffFile(t, "Language")
 }
 func TestORCID(t *testing.T) {
-	if document.Authors[0].Person.Orcid != "https://orcid.org/0000-0003-4925-7248-s" {
-		t.Error("ORCID not parsed correctly, should be https://orcid.org/0000-0003-4925-7248-s, is currently", document.CffType)
+	if document.Authors[0].Person.Orcid != "https://orcid.org/0000-0003-4925-7248" {
+		t.Error("ORCID not parsed correctly, should be https://orcid.org/0000-0003-4925-7248, is currently", document.CffType)
 	}
 
 	newDocument := Cff{

@@ -7,7 +7,7 @@ import (
 var regexORCID *regexp.Regexp
 
 func init() {
-	regexORCID = regexp.MustCompile(`https://orcid\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]{1}`)
+	regexORCID = regexp.MustCompile(`^https://orcid\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]{1}$`)
 }
 
 //UnmarshalYAML parses a cff string into an ORCID object
